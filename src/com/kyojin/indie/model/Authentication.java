@@ -80,7 +80,7 @@ public class Authentication{
 		this.certificate = certificate;
 	}
 
-	public void createResquest() throws CertificateEncodingException {
+	public String createResquest() throws CertificateEncodingException {
 		this.athenticationRq
 		.append("<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">")
 		.append("<s:Header>")
@@ -118,7 +118,7 @@ public class Authentication{
 		.append("</s:Body>")
 		.append("</s:Envelope>");
 		
-		
+		return this.athenticationRq.toString();
 	}
 	
 }
