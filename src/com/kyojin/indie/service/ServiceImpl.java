@@ -14,7 +14,7 @@ import java.util.TimeZone;
 public class ServiceImpl implements Service {
 
 	@Override
-	public String generateUUIDCreate() {
+	public String generateCreate() {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 		simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 		Calendar calendarNow = Calendar.getInstance();
@@ -22,7 +22,7 @@ public class ServiceImpl implements Service {
 	}
 
 	@Override
-	public String generateUUIDExpires() {
+	public String generateExpires() {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 		simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 		Calendar calendarNow = Calendar.getInstance();
@@ -45,6 +45,15 @@ public class ServiceImpl implements Service {
 		sig.initSign(privateKey);
 		sig.update(canonicalSignedInfo.getBytes());
 		return Base64.getEncoder().encodeToString(sig.sign());
+	}
+
+	@Override
+	public String generatecanonicalTimestamp(String created, String expires) {
+		// TODO Auto-generated method stub
+		return "<u:Timestamp xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" u:Id=\"_0\">" +
+                "<u:Created>" + created + "</u:Created>" +
+                "<u:Expires>" + expires + "</u:Expires>" +
+                "</u:Timestamp>";
 	}
 
 }

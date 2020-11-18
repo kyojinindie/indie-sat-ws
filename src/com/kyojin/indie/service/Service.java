@@ -7,9 +7,11 @@ import java.security.SignatureException;
 
 public interface Service {
 	
-	public String generateUUIDCreate();
+	public String generateCreate();
 	
-	public String generateUUIDExpires();
+	public String generateExpires();
+	
+	public String generatecanonicalTimestamp(String created, String expires);
 	
 	public String createDigest(String canonicalTimestamp) throws NoSuchAlgorithmException;
 	
