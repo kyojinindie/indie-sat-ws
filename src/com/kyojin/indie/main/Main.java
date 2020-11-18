@@ -11,6 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		ControllerImpl controller = new ControllerImpl();
 		LOGGER.log(Level.INFO, "UUIDCreate " + controller.generateUUIDCreate());
+		LOGGER.log(Level.INFO, "UUIDExpires() " + controller.generateUUIDExpires());
 	}
 
 }

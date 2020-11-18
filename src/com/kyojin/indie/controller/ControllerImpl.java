@@ -8,8 +8,12 @@ public class ControllerImpl implements Controller {
 
 	@Override
 	public String generateUUIDCreate() {
-		// TODO Auto-generated method stub
 		return serviceImpl.generateUUIDCreate();
+	}
+
+	@Override
+	public String generateUUIDExpires() {
+		return serviceImpl.generateUUIDExpires();
 	}
 
 }
