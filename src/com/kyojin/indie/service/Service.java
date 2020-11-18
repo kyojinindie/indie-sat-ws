@@ -1,6 +1,9 @@
 package com.kyojin.indie.service;
 
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.SignatureException;
 
 public interface Service {
 	
@@ -8,7 +11,8 @@ public interface Service {
 	
 	public String generateUUIDExpires();
 	
-	public String createDigest(String canonicalTimestamp);
+	public String createDigest(String canonicalTimestamp) throws NoSuchAlgorithmException;
 	
-	public String createSing(String canonicalSignedInfo,PrivateKey privateKey);
+	public String createSing(String canonicalSignedInfo,PrivateKey privateKey)
+			throws NoSuchAlgorithmException, InvalidKeyException, SignatureException;
 }

@@ -1,5 +1,5 @@
 package com.kyojin.indie.controller;
 
-public class Controller {
-
+public interface Controller {
+	public String generateUUIDCreate();
 }
