@@ -10,4 +10,6 @@ public interface Controller {
 	public String generatecanonicalTimestamp(String created, String expires);
 	
 	public String createDigest(String canonicalTimestamp) throws NoSuchAlgorithmException;
+	
+	public String generateCanonicalSignedInfo(String digest);
 }

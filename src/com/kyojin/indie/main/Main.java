@@ -16,10 +16,12 @@ public class Main {
 		String expires = controller.generateUUIDExpires();
 		String canonicalTimestamp = controller.generatecanonicalTimestamp(created, expires);
 		String digest = controller.createDigest(canonicalTimestamp);
+		String canonicalSignedInfo = controller.generateCanonicalSignedInfo(digest);
 		LOGGER.log(Level.INFO, "Create " + created);
 		LOGGER.log(Level.INFO, "Expires " + expires);
 		LOGGER.log(Level.INFO, "anonicalTimestamp " + canonicalTimestamp);
 		LOGGER.log(Level.INFO, "digest " + digest);
+		LOGGER.log(Level.INFO, "canonicalSignedInfo " + canonicalSignedInfo);
 	}
 
 }

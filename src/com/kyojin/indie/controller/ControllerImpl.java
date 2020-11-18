@@ -28,4 +28,9 @@ public class ControllerImpl implements Controller {
 		return serviceImpl.generatecanonicalTimestamp(created, expires);
 	}
 
+	@Override
+	public String generateCanonicalSignedInfo(String digest) {
+		return serviceImpl.generateCanonicalSignedInfo(digest);
+	}
+
 }

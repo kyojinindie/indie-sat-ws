@@ -15,6 +15,8 @@ public interface Service {
 	
 	public String createDigest(String canonicalTimestamp) throws NoSuchAlgorithmException;
 	
+	public String generateCanonicalSignedInfo(String digest);
+	
 	public String createSing(String canonicalSignedInfo,PrivateKey privateKey)
 			throws NoSuchAlgorithmException, InvalidKeyException, SignatureException;
 }
