@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.security.Certificate;
 import java.security.InvalidKeyException;
 import java.security.KeyStore;
@@ -23,6 +26,7 @@ import java.util.Base64;
 import java.util.Calendar;
 import java.util.Enumeration;
 import java.util.TimeZone;
+import java.util.UUID;
 
 public class ServiceImpl implements Service {
 	
@@ -102,6 +106,20 @@ public class ServiceImpl implements Service {
 		sig.initSign(privateKey);
 		sig.update(canonicalSignedInfo.getBytes());
 		return Base64.getEncoder().encodeToString(sig.sign());
+	}
+
+	@Override
+	public String uuid() {
+		return "uuid-" + UUID.randomUUID().toString() + "-1";
+	}
+
+	@Override
+	public String decodeValue(String value) {
+		try {
+            return URLDecoder.decode(value, StandardCharsets.UTF_8.toString());
+        } catch (UnsupportedEncodingException ex) {
+            throw new RuntimeException(ex.getCause());
+        }
 	}
 
 

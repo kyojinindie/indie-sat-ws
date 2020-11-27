@@ -18,6 +18,8 @@ public interface Service {
 	
 	public String generateExpires();
 	
+	public String uuid ();
+	
 	public String generatecanonicalTimestamp(String created, String expires);
 	
 	public String createDigest(String canonicalTimestamp) throws NoSuchAlgorithmException;
@@ -33,4 +35,6 @@ public interface Service {
 	
 	public String createSing(String canonicalSignedInfo,PrivateKey privateKey)
 			throws NoSuchAlgorithmException, InvalidKeyException, SignatureException;
+	
+	public String decodeValue(String value);
 }

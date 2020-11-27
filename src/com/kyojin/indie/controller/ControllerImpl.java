@@ -3,9 +3,11 @@ package com.kyojin.indie.controller;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.InvalidKeyException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.SignatureException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -42,9 +44,8 @@ public class ControllerImpl implements Controller {
 	}
 
 	@Override
-	public String createSing(String canonicalSignedInfo, PrivateKey privateKey) {
-		// TODO Auto-generated method stub
-		return null;
+	public String createSing(String canonicalSignedInfo, PrivateKey privateKey) throws InvalidKeyException, NoSuchAlgorithmException, SignatureException {
+		return serviceImpl.createSing(canonicalSignedInfo, privateKey);
 	}
 
 	@Override
@@ -56,8 +57,12 @@ public class ControllerImpl implements Controller {
 
 	@Override
 	public X509Certificate getCertificate(File file) throws CertificateException, FileNotFoundException {
-		// TODO Auto-generated method stub
 		return serviceImpl.getCertificate(file);
+	}
+
+	@Override
+	public String uuid() {
+		return serviceImpl.uuid();
 	}
 
 }

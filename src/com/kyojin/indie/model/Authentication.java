@@ -15,7 +15,7 @@ public class Authentication{
 	private StringBuilder athenticationRq;
 	
 	public Authentication(String created, String expires, String uuid, String digest, String signature,
-			X509Certificate certificate, StringBuilder athenticationRq) {
+			X509Certificate certificate) {
 		super();
 		this.created = created;
 		this.expires = expires;
@@ -23,7 +23,7 @@ public class Authentication{
 		this.digest = digest;
 		this.signature = signature;
 		this.certificate = certificate;
-		this.athenticationRq = athenticationRq;
+		this.athenticationRq = new StringBuilder();
 	}
 	
 	public Authentication() {}
