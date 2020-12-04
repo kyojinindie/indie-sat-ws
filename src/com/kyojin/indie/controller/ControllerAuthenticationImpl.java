@@ -14,7 +14,7 @@ import java.security.cert.X509Certificate;
 
 import com.kyojin.indie.service.ServiceImpl;
 
-public class ControllerImpl implements Controller {
+public class ControllerAuthenticationImpl implements ControllerAuthentication {
 	
 	ServiceImpl serviceImpl = new ServiceImpl();
 

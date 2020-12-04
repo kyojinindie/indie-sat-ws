@@ -12,7 +12,7 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
-public interface Controller {
+public interface ControllerAuthentication {
 	public String generateCreate();
 
 	public String generateExpires();

@@ -18,7 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.kyojin.indie.client.Client;
-import com.kyojin.indie.controller.ControllerImpl;
+import com.kyojin.indie.controller.ControllerAuthenticationImpl;
 import com.kyojin.indie.model.Authentication;
 
 public class Main {
@@ -32,7 +32,7 @@ public class Main {
 	    String urlAutenticaAction = "http://DescargaMasivaTerceros.gob.mx/IAutenticacion/Autentica";
         File filePFX = new File(filePathPFX);
         File fileCer= new File(filePathCer);
-		ControllerImpl controller = new ControllerImpl();
+		ControllerAuthenticationImpl controller = new ControllerAuthenticationImpl();
 		String created = controller.generateCreate();
 		String expires = controller.generateExpires();
 		String canonicalTimestamp = controller.generatecanonicalTimestamp(created, expires);
