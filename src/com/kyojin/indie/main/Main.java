@@ -46,6 +46,8 @@ public class Main {
 		String authenticationRq = authentication.createRequest();
 		Client client = new Client();
 		String response = client.send(new URL(urlAutentica), authenticationRq, urlAutenticaAction);
+		String token = "WRAP access_token=\"" + controller.decodeValue(response) + "\"";
+		
 		
 		LOGGER.log(Level.INFO, "Create " + created);
 		LOGGER.log(Level.INFO, "Expires " + expires);
@@ -58,6 +60,7 @@ public class Main {
 		LOGGER.log(Level.INFO, "signature " + signature);
 		LOGGER.log(Level.INFO, "authenticationRq " + authenticationRq);
 		LOGGER.log(Level.INFO, "response " + response);
+		LOGGER.log(Level.INFO, "token " + token);
 	}
 
 }

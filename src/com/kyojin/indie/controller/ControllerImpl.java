@@ -65,4 +65,9 @@ public class ControllerImpl implements Controller {
 		return serviceImpl.uuid();
 	}
 
+	@Override
+	public String decodeValue(String value) {
+		return serviceImpl.decodeValue(value);
+	}
+
 }

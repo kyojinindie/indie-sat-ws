@@ -34,4 +34,6 @@ public interface Controller {
 	
 	public String createSing(String canonicalSignedInfo,PrivateKey privateKey)
 			throws InvalidKeyException, NoSuchAlgorithmException, SignatureException;
+	
+	public String decodeValue(String value);
 }
