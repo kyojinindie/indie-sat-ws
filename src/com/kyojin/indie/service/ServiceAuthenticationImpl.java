@@ -28,7 +28,7 @@ import java.util.Enumeration;
 import java.util.TimeZone;
 import java.util.UUID;
 
-public class ServiceImpl implements Service {
+public class ServiceAuthenticationImpl implements ServiceAuthentication {
 	
     
 	

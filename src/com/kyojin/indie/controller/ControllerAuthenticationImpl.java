@@ -12,11 +12,11 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
-import com.kyojin.indie.service.ServiceImpl;
+import com.kyojin.indie.service.ServiceAuthenticationImpl;
 
 public class ControllerAuthenticationImpl implements ControllerAuthentication {
 	
-	ServiceImpl serviceImpl = new ServiceImpl();
+	ServiceAuthenticationImpl serviceImpl = new ServiceAuthenticationImpl();
 
 	@Override
 	public String generateCreate() {
