@@ -22,9 +22,14 @@ public class Main {
 		Controller controller = new Controller();
 		
 		String token = controller.consumeAuthenticate();
+		String idRequest = controller.consumeDownloadRequest(token);
+		String idPackages = controller.consumeVerifyRequest(token, idRequest);
+        String packageString = controller.consumeDownload(token, idPackages);
 		
 		LOGGER.log(Level.INFO, "Token: " + token);
-		LOGGER.log(Level.INFO, "Id Request: " + controller.consumeDownloadRequest(token));
+		LOGGER.log(Level.INFO, "Id Request: " + idRequest);
+		LOGGER.log(Level.INFO, "Id Packages: " + idPackages);
+		LOGGER.log(Level.INFO, "packageString: " + packageString);
 	}
 
 }
