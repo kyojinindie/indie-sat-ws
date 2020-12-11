@@ -12,13 +12,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.kyojin.indie.controller.Controller;
+import com.kyojin.indie.logo.Logo;
 
 public class Main {
 	
 	private final static Logger LOGGER = Logger.getLogger("bitacora.subnivel.Control");
 	
 	public static void main(String[] args) throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException, CertificateException, FileNotFoundException, IOException, InvalidKeyException, SignatureException {
-		
+		Logo logo = new Logo();
+		logo.printLogo();
 		Controller controller = new Controller();
 		
 		String token = controller.consumeAuthenticate();
