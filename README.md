@@ -7,7 +7,9 @@ Este es un ejemplo de como consumir los 4 web services para la descarga masiva d
 Todos los creditos son para estos 3 enlaces en los cuales fue basado este proyecto:
 
 -https://developers.sw.com.mx/knowledge-base/descarga-masiva-sat-authenticacion/
+
 -https://github.com/geezylucas/DescargaMasivaSAT
+
 -https://developers.sw.com.mx/knowledge-base/como-crear-un-pfx/
 
 ### **USO**
@@ -26,10 +28,11 @@ Todos los creditos son para estos 3 enlaces en los cuales fue basado este proyec
 5.- Llenar el archivo Util con las rutas de los archivos Mi_archivo.cer, Mi_archivo.pfx y el RFC correspondiente.
 
 6.- Cambiar las fechas del archivo Service método consumeRequestDownload
-	```java
-		rqDownload.setInitialDate("2020-07-01");
+
+```java
+       rqDownload.setInitialDate("2020-07-01");
 		rqDownload.setFinalDate("2020-12-11");	
-	```
+```
 
 7.- Run as Java application
 
