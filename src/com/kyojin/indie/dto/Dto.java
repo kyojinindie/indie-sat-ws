@@ -11,14 +11,14 @@ import com.kyojin.indie.model.VerifyRequest;
 
 public class Dto {
 	
-	Authentication authentication;
-	RequestDownload rqDownload;
-	VerifyRequest verifyRequest;
-	Download download;
-	ClientAuthentication clientAuthentication;
-	ClientDownloadRequest clientDownloadRequest;
-	ClientVerifyRequest clientVerifyRequest;
-	ClientDownload clientDownload;
+	private Authentication authentication;
+	private RequestDownload rqDownload;
+	private VerifyRequest verifyRequest;
+	private Download download;
+	private ClientAuthentication clientAuthentication;
+	private ClientDownloadRequest clientDownloadRequest;
+	private ClientVerifyRequest clientVerifyRequest;
+	private ClientDownload clientDownload;
 	
 	public Dto() {
 		this.authentication = new Authentication();
