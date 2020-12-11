@@ -14,8 +14,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
-public class Client {
-	public String send(URL url, String request, String SOAPAction) throws IOException {
+public abstract class Client {
+	public String send(URL url, String request, String SOAPAction, String authorization) throws IOException {
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		
 		 // Set timeout as per needs
@@ -30,6 +30,9 @@ public class Client {
         conn.setRequestProperty("Accept-Charset", "UTF_8");
         conn.setRequestProperty("Content-type", "text/xml; charset=utf-8");
         conn.setRequestProperty("SOAPAction", SOAPAction);
+        
+        if (authorization != null)
+            conn.setRequestProperty("Authorization", authorization);
         
         // Write XML
         OutputStream outputStream = conn.getOutputStream();
@@ -50,15 +53,7 @@ public class Client {
 		
 	}
 	
-	public String getResult(String xmlResponse) {
-        Document doc = convertStringToXMLDocument(xmlResponse);
-
-        //Verify XML document is build correctly
-        if (doc != null)
-            return doc.getElementsByTagName("AutenticaResult").item(0).getTextContent();
-
-        return null;
-    }
+	public abstract String getResult(String xmlResponse);
 	
 	public  Document convertStringToXMLDocument(String xmlString) {
         //Parser that produces DOM object trees from XML content
